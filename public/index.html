@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="WallpaperEngineSpace Downloader" />
+    <meta property="og:url" content="https://wallpaperenginespace-downloader.vercel.app" />
+    <meta property="og:description" content="Download wallpapers directly from https://wallpaperengine.space" />
+    <meta name="theme-color" content="#dadada">
+    <title>WallpaperEngineSpace Downloader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="mux-mp4.min.js"></script>
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    
+    body {
+      font-family: "IBM Plex Mono", sans-serif;
+    }
+
+    @keyframes border-blink {
+    0% { border-color: var(--border-color-start); }
+    50% { border-color: var(--border-color-mid); }
+    100% { border-color: var(--border-color-start); }
+    }
+
+    :root {
+        --border-color-start: #3f4041;
+        --border-color-mid: #000;
+    }
+
+    .dark {
+        --border-color-start: #fff;
+        --border-color-mid: #bbbdbe;
+    }
+
+    #input_link:focus {
+        animation: border-blink 1s infinite;
+    }
+
+</style>
+
+<body class="text-neutral-900 dark:text-gray-300 bg-neutral-300 dark:bg-neutral-950">
+    <header class="flex items-center justify-between p-4 font-semibold bg-neutral-200 dark:bg-neutral-900">
+        <a class="text-sm transition duration-200 cursor-pointer lg:text-xl hover:text-neutral-600 dark:hover:text-white" href="/">WallpaperEngineSpace Downloader</a>
+        <div class="flex items-center text-sm text-right lg:text-base"> 
+            <button id="toggle_button" class="mr-5 font-medium transition duration-200 hover:text-neutral-600 dark:hover:text-white"></button>
+            <a class="underline transition duration-200 hover:text-neutral-600 dark:hover:text-white" href="/github" target="_blank">GitHub Repository</a>
+        </div>
+    </header>
+    
+
+    <div class="flex flex-col items-center justify-center w-full max-w-3xl px-4 mx-auto mt-8 lg:mt-16">
+        <h1 class="text-lg font-medium text-center">Download wallpapers directly from <a href="https://wallpaperengine.space" target="_blank" class="underline transition duration-200 hover:text-neutral-600 dark:hover:text-white">wallpaperengine.space</a></h1>
+        <input id="input_link" type="text" class="w-full max-w-xl p-2 mt-10 text-sm text-center bg-transparent border-2 rounded-lg border-neutral-800 hover:border-neutral-700 dark:border-neutral-300 dark:hover:border-white focus:outline-none placeholder-neutral-600 dark:placeholder-neutral-600 lg:text-base" placeholder="Paste WallpaperEngineSpace link here" autocomplete="off" spellcheck="false">
+        <h1 id="error_text" class="hidden mt-2 text-sm text-center text-red-600 lg:mt-4 lg:text-base"><i class="fa-solid fa-xmark"></i> Error: please enter a valid WallpaperEngineSpace link</h1>
+        <button id="download_button" class="w-full max-w-xl py-2 mt-5 text-lg font-semibold transition duration-200 rounded-lg opacity-50 cursor-not-allowed pointer-events-none bg-neutral-800 dark:bg-neutral-300 text-neutral-300 dark:text-neutral-950 hover:bg-neutral-700 dark:hover:bg-white"><i class="fa-solid fa-angles-down"></i> Download</button>
+        <button id="convert_button" class="hidden w-full max-w-xl py-2 mt-5 text-lg font-semibold transition duration-200 rounded-lg cursor-not-allowed pointer-events-none bg-neutral-800 dark:bg-neutral-300 text-neutral-300 dark:text-neutral-950 hover:bg-neutral-700 dark:hover:bg-white"><i class="fa-solid fa-gear"></i> Conversion</button>
+    </div>
+</body>
+
+</html>
+<script type="module" src="script.js"></script>
