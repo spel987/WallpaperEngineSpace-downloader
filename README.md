@@ -39,7 +39,7 @@ node index.js
 
 I'm currently using [Mux.js](https://github.com/videojs/mux.js/) to transmux the MPEG-TS stream into MP4 on the frontend. But this causes a bug in the metadata. The length of the video file is not correct and is far too long. Don't worry, this doesn't affect the use of the video file in WallpaperEngine or even playback with VLC, for example. It's just that the duration displayed is not the real duration.
 
-## How it works
+# How it works
 
 <h1 align="center">
 	<a href="#"><img src="https://i.imgur.com/zW22y90.png"></a>
